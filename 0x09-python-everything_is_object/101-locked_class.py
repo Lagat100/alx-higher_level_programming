@@ -1,3 +1,9 @@
 #!/usr/bin/python3
+""" Defining a class """
+
+
 class LockedClass:
-    __slots__ = [first_name]
+    """
+    This class prevents user from dynamic attributes
+    """
+    __slots__ = ['first_name']
