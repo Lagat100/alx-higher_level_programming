@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-""" return True if an object is an  instance of a class inherited """
+""" Return Only sub class of a class """
+
 
 def inherits_from(obj, a_class):
     """
-
     return True if an object is an instance of a class
-
     """
     if isinstance(obj, a_class) and type(obj) != a_class:
         return True
