@@ -19,8 +19,9 @@ if __name__ == '__main__':
            WHERE BINARY states.name = %s ORDER BY cities.id ASC;"
     cur.execute(query, (state_name, ))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    city_names = [row[0] for row in rows]
+
+    print(", ".join(city_names))
 
     cur.close()
     db.close()
