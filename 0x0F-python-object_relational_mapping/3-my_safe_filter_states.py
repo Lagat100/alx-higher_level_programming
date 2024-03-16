@@ -13,12 +13,8 @@ if __name__ == '__main__':
             db=sys.argv[3])
 
     cur = db.cursor()
-    x = sys.argv[4]
-    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id;"
-    cur.execute(query, (x))
+    query = "SELECT * FROM states WHERE BINARY name=%s ORDER BY id;"
+    cur.execute(query, (sys.argv[4],))
     rows = cur.fetchall()
     for row in rows:
         print(row)
-
-    cur.close()
-    db.close()
